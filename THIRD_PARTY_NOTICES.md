@@ -20,11 +20,7 @@ Mitgelieferte Dateien unter `custom_components/fhem_bridge/codemirror/`:
 - `perl.js` – Perl-Syntaxhervorhebung
 - `LICENSE` – vollständiger MIT-Lizenztext
 
-Der vollständige [Original-Lizenztext](custom_components/fhem_bridge/codemirror/LICENSE)
-und die Urheberhinweise in den Quelldateien sind enthalten.
-`perl.js` enthält zusätzlich den ursprünglichen Herkunftshinweis auf
-[CodeMirror_mode_perl](https://github.com/sabaca/CodeMirror_mode_perl)
-(Sabaca, <mail@sabaca.com>).
+**Lizenztext:** [Original-Lizenz](custom_components/fhem_bridge/codemirror/LICENSE)
 
 ## Konzeptionelle Referenz
 
