@@ -5,14 +5,14 @@
     "@piposa"
   ],
   "config_flow": true,
-  "integration_type": "hub",
-  "iot_class": "local_push",
-  "version": "0.9.69",
   "dependencies": [
     "http",
     "panel_custom",
     "persistent_notification"
   ],
   "documentation": "https://github.com/piposa/ha-fhem-bridge#readme",
-  "issue_tracker": "https://github.com/piposa/ha-fhem-bridge/issues"
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "issue_tracker": "https://github.com/piposa/ha-fhem-bridge/issues",
+  "version": "0.9.69"
 }
