@@ -1,0 +1,3 @@
+# New entries first. ASCII only, max. 80 columns; no empty lines.
+ - 2026-11-24 bugfix: HABridge update source: add CHANGED and MAINTAINER.txt.
+ - 2026-11-24 feature: HABridge 0.9.44: public TCP/TLS update source.

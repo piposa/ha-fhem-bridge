@@ -90,7 +90,7 @@ update check habridge
 update all habridge
 ```
 
-Die Quelle installiert ausschließlich das Perl-Modul, das FHEMWEB-Icon und den zugehörigen MIT-Lizenztext. FHEM-Konfigurationen und Zertifikate werden nicht mitgeliefert. Ein Prozessneustart wird von dieser Updatequelle nicht angefordert.
+Die Quelle installiert ausschließlich das Perl-Modul, das FHEMWEB-Icon und den zugehörigen MIT-Lizenztext. [CHANGED](FHEM/CHANGED) enthält die Updatehinweise; [MAINTAINER.txt](FHEM/MAINTAINER.txt) nennt `pantau` als Ansprechpartner im FHEM-Forum. Diese beiden Informationsdateien liegen neben der Kontrolldatei und überschreiben keine globalen FHEM-Dateien. FHEM-Konfigurationen und Zertifikate werden nicht mitgeliefert. Ein Prozessneustart wird von dieser Updatequelle nicht angefordert.
 
 Alternativ die Dateien aus diesem Repository relativ zum FHEM-Installationsverzeichnis ablegen:
 

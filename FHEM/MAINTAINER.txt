@@ -1,0 +1,7 @@
+﻿HABridge update source maintainers. Contact handles refer to the FHEM forum.
+
+File                                 Maintainer          Forum
+==============================================================================
+FHEM/98_HABridge.pm                  pantau              https://forum.fhem.de
+www/images/default/habridge.png      pantau              https://forum.fhem.de
+FHEM/HABridge-LICENSE.txt            pantau              https://forum.fhem.de
