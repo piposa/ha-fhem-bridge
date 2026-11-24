@@ -7,8 +7,9 @@
   "config_flow": true,
   "integration_type": "hub",
   "iot_class": "local_push",
-  "version": "0.9.68",
+  "version": "0.9.69",
   "dependencies": [
+    "http",
     "panel_custom",
     "persistent_notification"
   ],

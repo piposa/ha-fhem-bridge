@@ -8,7 +8,7 @@
 
 | Bestandteil | Stand |
 | --- | --- |
-| HA-Integration | **0.9.68 · Vorabversion** |
+| HA-Integration | **0.9.69 · Vorabversion** |
 | FHEM-Modul HABridge | **0.9.44** |
 | Home Assistant | **2026.11 oder neuer** |
 | Verbindung | Lokales TCP mit TLS und gemeinsamem Secret |
