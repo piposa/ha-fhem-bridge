@@ -1,0 +1,36 @@
+schema: 1
+key: hmconfig-hm-wds10-th-o
+name: HM-WDS10-TH-O
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 003D.
+default_role: temperature
+roles:
+  temperature:
+    name: Temperatur und Luftfeuchte
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      measured-temp:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-WDS10-TH-O

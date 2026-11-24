@@ -1,0 +1,18 @@
+schema: 1
+key: cul-ws-rain
+name: CUL_WS Regensensor
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - Rain
+default_role: weather
+roles:
+  weather:
+    name: CUL_WS Regensensor
+    layout: weather
+    readings:
+      rain: sensor
+      state: diagnostic
+items: []

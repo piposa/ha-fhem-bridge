@@ -1,0 +1,88 @@
+schema: 1
+key: tasmota
+name: Tasmota
+origin: default
+version: 2026-11-17T00:00:00Z-01
+match:
+- type: MQTT2_DEVICE
+  models:
+  - tasmota
+  model_prefixes:
+  - tasmota_
+default_role: outlet
+roles:
+  outlet:
+    name: Tasmota
+    layout: outlet
+    readings:
+      state: internal
+      ENERGY_Power:
+        mode: sensor
+        label: Leistung
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+      power:
+        mode: sensor
+        label: Leistung
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+      ENERGY_Voltage:
+        mode: sensor
+        label: Spannung
+        sensor_metadata:
+          device_class: voltage
+          state_class: measurement
+          unit_of_measurement: V
+      voltage:
+        mode: sensor
+        label: Spannung
+        sensor_metadata:
+          device_class: voltage
+          state_class: measurement
+          unit_of_measurement: V
+      ENERGY_Today:
+        mode: sensor
+        label: Energie heute
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      energy_today:
+        mode: sensor
+        label: Energie heute
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      ENERGY_Total:
+        mode: sensor
+        label: Energie gesamt
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      energy_total:
+        mode: sensor
+        label: Energie gesamt
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      IPAddress:
+        mode: diagnostic
+        label: IP-Adresse
+      Info2_IPAddress:
+        mode: diagnostic
+        label: IP-Adresse (Info2)
+      Wifi_Signal:
+        mode: diagnostic
+        label: WLAN-Signal
+        sensor_metadata:
+          device_class: signal_strength
+          state_class: measurement
+          unit_of_measurement: dBm
+items: []

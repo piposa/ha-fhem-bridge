@@ -1,0 +1,27 @@
+schema: 1
+key: fs20piru
+name: FS20 PIRU · Bewegungsmelder
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20piru
+default_role: motion
+roles:
+  motion:
+    name: Bewegungsmelder
+    layout: motion
+    readings:
+      brightness: sensor
+      motionCount: diagnostic
+      motionDuration:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: duration
+          state_class: measurement
+          unit_of_measurement: s
+    binary:
+    - state
+    - motion
+items: []

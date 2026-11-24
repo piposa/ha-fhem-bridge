@@ -1,0 +1,43 @@
+schema: 1
+key: cul-ws-ks300
+name: CUL_WS KS300
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - KS300
+  - KS300/2
+default_role: weather
+roles:
+  weather:
+    name: CUL_WS KS300
+    layout: weather
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      wind:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_speed
+          state_class: measurement
+          unit_of_measurement: km/h
+      rain:
+        mode: sensor
+        sensor_metadata:
+          device_class: precipitation
+          state_class: total_increasing
+          unit_of_measurement: mm
+      is_raining: binary
+      state: diagnostic
+items: []

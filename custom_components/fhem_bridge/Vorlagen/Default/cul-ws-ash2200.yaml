@@ -1,0 +1,29 @@
+schema: 1
+key: cul-ws-ash2200
+name: CUL_WS ASH2200
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - ASH2200
+default_role: temperature
+roles:
+  temperature:
+    name: CUL_WS ASH2200
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: diagnostic
+items: []

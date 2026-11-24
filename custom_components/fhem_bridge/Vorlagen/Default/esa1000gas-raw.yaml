@@ -1,0 +1,19 @@
+schema: 1
+key: esa1000gas-raw
+name: ESA1000GAS Rohwerte
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: ESA2000
+  models:
+  - esa1000gas
+default_role: meter
+roles:
+  meter:
+    name: ESA1000GAS Rohwerte
+    layout: meter
+    remaining_readings: diagnostic
+    readings:
+      total: sensor
+      actual: sensor
+items: []

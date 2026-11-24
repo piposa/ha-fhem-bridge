@@ -1,0 +1,15 @@
+schema: 1
+key: hmconfig-hm-lc-bl1-sm-2
+name: HM-LC-BL1-SM-2
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 00D1.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-BL1-SM-2

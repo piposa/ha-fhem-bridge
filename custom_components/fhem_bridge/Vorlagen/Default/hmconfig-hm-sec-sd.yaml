@@ -1,0 +1,22 @@
+schema: 1
+key: hmconfig-hm-sec-sd
+name: HM-SEC-SD
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0042.
+automatic: false
+default_role: smoke
+roles:
+  smoke:
+    name: Rauchmelder
+    layout: smoke
+    readings:
+      smoke_detect: diagnostic
+      teamCall: diagnostic
+    binary:
+    - state
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-SEC-SD

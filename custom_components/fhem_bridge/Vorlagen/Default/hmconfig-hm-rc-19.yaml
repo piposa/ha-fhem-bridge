@@ -1,0 +1,44 @@
+schema: 1
+key: hmconfig-hm-rc-19
+name: HM-RC-19
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0037.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-RC-19
+  channels:
+    '00': metadata
+    '01': remote
+    '02': remote
+    '03': remote
+    '04': remote
+    '05': remote
+    '06': remote
+    '07': remote
+    08: remote
+    09: remote
+    '10': remote
+    '11': remote
+    '12': remote
+    '13': remote
+    '14': remote
+    '15': remote
+    '16': remote
+    '17': remote

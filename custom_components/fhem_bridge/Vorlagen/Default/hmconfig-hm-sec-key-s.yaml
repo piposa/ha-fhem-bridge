@@ -1,0 +1,15 @@
+schema: 1
+key: hmconfig-hm-sec-key-s
+name: HM-SEC-KEY-S
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0026.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-SEC-KEY-S

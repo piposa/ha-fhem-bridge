@@ -1,0 +1,26 @@
+schema: 1
+key: cul-em-emgz
+name: CUL_EM EMGZ
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: CUL_EM
+  models:
+  - EMGZ
+default_role: meter
+roles:
+  meter:
+    name: CUL_EM EMGZ
+    layout: meter
+    remaining_readings: diagnostic
+    readings:
+      total:
+        mode: sensor
+        label: Zählerstand
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+          state_class: total
+      current: sensor
+      peak: diagnostic
+items: []

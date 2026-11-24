@@ -1,0 +1,18 @@
+schema: 1
+key: max-plug-adapter
+name: MAX Plug Adapter
+origin: default
+version: 2026-11-16T16:45:00Z-01
+match:
+- type: MAX
+  models:
+  - PlugAdapter
+default_role: metadata
+roles:
+  metadata:
+    name: MAX Plug Adapter
+    layout: metadata
+    remaining_readings: diagnostic
+    readings:
+      state: diagnostic
+items: []

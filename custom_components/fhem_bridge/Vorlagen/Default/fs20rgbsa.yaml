@@ -1,0 +1,17 @@
+schema: 1
+key: fs20rgbsa
+name: FS20 RGBSA · RGB-Statusanzeige
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20rgbsa
+default_role: metadata
+roles:
+  metadata:
+    name: Funkzustand
+    layout: metadata
+    readings:
+      state: sensor
+items: []

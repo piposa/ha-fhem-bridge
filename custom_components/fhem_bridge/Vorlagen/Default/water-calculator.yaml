@@ -1,0 +1,220 @@
+schema: 1
+key: water-calculator
+name: Wasserzähler (Calculator)
+origin: default
+version: 2026-11-16T13:18:52Z-01
+match:
+- type: WaterCalculator
+default_role: meter
+roles:
+  meter:
+    name: Wasserzähler
+    layout: meter
+    remaining_readings: diagnostic
+    reading_suffixes:
+      _CounterCurrent:
+        mode: sensor
+        label: Zählerstand
+        sensor_metadata:
+          device_class: water
+          state_class: total
+          unit_of_measurement: m³
+      _WFRCurrent:
+        mode: sensor
+        label: Durchfluss
+        sensor_metadata:
+          device_class: volume_flow_rate
+          state_class: measurement
+          unit_of_measurement: L/min
+        unit_from: WFRUnit
+      _WFRDayAver:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: volume_flow_rate
+          state_class: measurement
+          unit_of_measurement: L/min
+        unit_from: WFRUnit
+      _WFRDayMin:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: volume_flow_rate
+          state_class: measurement
+          unit_of_measurement: L/min
+        unit_from: WFRUnit
+      _WFRDayMax:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: volume_flow_rate
+          state_class: measurement
+          unit_of_measurement: L/min
+        unit_from: WFRUnit
+      _WFRDayCount:
+        mode: diagnostic
+        sensor_metadata:
+          state_class: measurement
+      _WFRDaySum:
+        mode: diagnostic
+        sensor_metadata: {}
+      _ConsumptionDay:
+        mode: sensor
+        label: Verbrauch heute
+        sensor_metadata:
+          device_class: water
+          state_class: total_increasing
+          unit_of_measurement: m³
+      _ConsumptionCostDay:
+        mode: sensor
+        label: Kosten heute
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _ConsumptionDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionCostDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterDay1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _CounterDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionMonth:
+        mode: sensor
+        label: Verbrauch diesen Monat
+        sensor_metadata:
+          device_class: water
+          state_class: total_increasing
+          unit_of_measurement: m³
+      _ConsumptionCostMonth:
+        mode: sensor
+        label: Kosten diesen Monat
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _ConsumptionMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionCostMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterMonth1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _CounterMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionYear:
+        mode: sensor
+        label: Verbrauch dieses Jahr
+        sensor_metadata:
+          device_class: water
+          state_class: total_increasing
+          unit_of_measurement: m³
+      _ConsumptionCostYear:
+        mode: sensor
+        label: Kosten dieses Jahr
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _ConsumptionYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionCostYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterYear1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _CounterYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionMeter:
+        mode: sensor
+        label: Verbrauch Abrechnungszeitraum
+        sensor_metadata:
+          device_class: water
+          state_class: total_increasing
+          unit_of_measurement: m³
+      _ConsumptionCostMeter:
+        mode: diagnostic
+        label: Kosten Abrechnungszeitraum
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _ConsumptionMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _ConsumptionCostMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterMeter1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _CounterMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _FinanceReserve:
+        mode: diagnostic
+        label: Vorauszahlungsreserve
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _MonthMeterReading:
+        mode: diagnostic
+        sensor_metadata:
+          state_class: measurement
+      _LastDV:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: water
+          unit_of_measurement: m³
+      _LastDt:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: duration
+          state_class: measurement
+          unit_of_measurement: s
+items: []

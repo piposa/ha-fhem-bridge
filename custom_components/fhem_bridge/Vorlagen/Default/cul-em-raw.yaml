@@ -1,0 +1,18 @@
+schema: 1
+key: cul-em-raw
+name: CUL_EM Zähler ohne Modellkennung
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: CUL_EM
+default_role: meter
+roles:
+  meter:
+    name: CUL_EM Zähler ohne Modellkennung
+    layout: meter
+    remaining_readings: diagnostic
+    readings:
+      total: sensor
+      current: sensor
+      peak: diagnostic
+items: []

@@ -1,0 +1,21 @@
+schema: 1
+key: smoke
+name: Rauchmelder
+origin: default
+version: 2026-11-12T12:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-SEC-SD
+  - HM-SEC-SD-2
+default_role: smoke
+roles:
+  smoke:
+    name: Rauchmelder
+    layout: smoke
+    readings:
+      smoke_detect: diagnostic
+      teamCall: diagnostic
+    binary:
+    - state
+items: []

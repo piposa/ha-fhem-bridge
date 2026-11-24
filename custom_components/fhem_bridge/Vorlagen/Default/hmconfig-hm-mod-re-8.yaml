@@ -1,0 +1,46 @@
+schema: 1
+key: hmconfig-hm-mod-re-8
+name: HM-MOD-RE-8
+origin: default
+version: 2026-11-16T16:00:00Z-02
+description: CUL_HM nach HMConfig.pm, Modell-ID 00BE.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  switch:
+    name: Schalten
+    layout: switch
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-MOD-RE-8
+  channels:
+    '00': metadata
+    '01': switch
+    '02': switch
+    '03': switch
+    '04': switch
+    '05': switch
+    '06': switch
+    '07': switch
+    08: switch

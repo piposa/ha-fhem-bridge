@@ -1,0 +1,37 @@
+schema: 1
+key: hmconfig-hm-sen-li-o
+name: HM-SEN-LI-O
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 00FD.
+automatic: false
+default_role: illuminance
+roles:
+  illuminance:
+    name: Helligkeitssensor
+    layout: illuminance
+    readings:
+      brightness:
+        mode: sensor
+        sensor_metadata:
+          device_class: illuminance
+          state_class: measurement
+          unit_of_measurement: lx
+      luminosity:
+        mode: sensor
+        sensor_metadata:
+          device_class: illuminance
+          state_class: measurement
+          unit_of_measurement: lx
+      lux:
+        mode: sensor
+        sensor_metadata:
+          device_class: illuminance
+          state_class: measurement
+          unit_of_measurement: lx
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-SEN-LI-O

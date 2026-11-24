@@ -1,0 +1,31 @@
+schema: 1
+key: hmconfig-roto-zel-stg-rm-hs-4
+name: ROTO_ZEL-STG-RM-HS-4
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0080.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - ROTO_ZEL-STG-RM-HS-4
+  channels:
+    '00': metadata
+    '01': remote
+    '02': remote
+    '03': remote
+    '04': remote

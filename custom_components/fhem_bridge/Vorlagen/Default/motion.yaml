@@ -1,0 +1,32 @@
+schema: 1
+key: motion
+name: Bewegungsmelder
+origin: default
+version: 2026-11-16T10:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-SEN-MDIR-O
+- type: FS20
+  models:
+  - fs20pira
+  - fs20piri
+  - fs20piru
+default_role: motion
+roles:
+  motion:
+    name: Bewegungsmelder
+    layout: motion
+    readings:
+      brightness: sensor
+      motionCount: diagnostic
+      motionDuration:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: duration
+          state_class: measurement
+          unit_of_measurement: s
+    binary:
+    - state
+    - motion
+items: []

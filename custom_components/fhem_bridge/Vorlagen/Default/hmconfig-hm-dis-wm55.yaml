@@ -1,0 +1,40 @@
+schema: 1
+key: hmconfig-hm-dis-wm55
+name: HM-DIS-WM55
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 00D3.
+automatic: false
+default_role: display
+roles:
+  display:
+    name: Display
+    layout: display
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+    controls:
+    - name: displayWM
+      label: Displayzeile einstellen
+      modes:
+      - select
+      - select
+      - text
+      - select
+      - select
+      kind: set
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-DIS-WM55
+  channels:
+    '00': metadata
+    '01': remote

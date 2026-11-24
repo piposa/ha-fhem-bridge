@@ -1,0 +1,29 @@
+schema: 1
+key: hmconfig-hm-lc-sw1-pl-3
+name: HM-LC-SW1-PL-3
+origin: default
+version: 2026-11-16T16:00:00Z-02
+description: CUL_HM nach HMConfig.pm, Modell-ID 00C8.
+default_role: switch
+roles:
+  switch:
+    name: Schalten
+    layout: switch
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-SW1-PL-3

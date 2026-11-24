@@ -1,0 +1,30 @@
+schema: 1
+key: fs20di
+name: FS20 DI · Funk-Dimmer
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20di
+default_role: dimmer
+roles:
+  dimmer:
+    name: Lichtdimmer
+    layout: dimmer
+    readings:
+      state: internal
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+items: []

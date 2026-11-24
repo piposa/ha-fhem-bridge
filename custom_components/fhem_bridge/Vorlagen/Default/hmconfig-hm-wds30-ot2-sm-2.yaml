@@ -1,0 +1,51 @@
+schema: 1
+key: hmconfig-hm-wds30-ot2-sm-2
+name: HM-WDS30-OT2-SM-2
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0102.
+automatic: false
+default_role: temperature
+roles:
+  temperature:
+    name: Temperatur und Luftfeuchte
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      measured-temp:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: internal
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  threshold:
+    name: Schwellenwerte
+    layout: threshold
+    readings:
+      state: sensor
+      trigger: sensor
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-WDS30-OT2-SM-2
+  channels:
+    '00': metadata
+    '05': threshold

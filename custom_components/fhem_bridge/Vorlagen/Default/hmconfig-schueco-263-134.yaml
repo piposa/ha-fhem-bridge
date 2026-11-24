@@ -1,0 +1,31 @@
+schema: 1
+key: hmconfig-schueco-263-134
+name: SCHUECO_263-134
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0089.
+default_role: dimmer
+roles:
+  dimmer:
+    name: Lichtdimmer
+    layout: dimmer
+    readings:
+      state: internal
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+items: []
+match:
+- type: CUL_HM
+  models:
+  - SCHUECO_263-134

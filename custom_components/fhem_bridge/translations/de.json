@@ -1,0 +1,498 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Mit FHEM Bridge verbinden",
+        "description": "Gib die FHEM-Adresse, den Port und das gemeinsame Secret aus der HABridge-Definition ein.",
+        "data": {
+          "host": "Host",
+          "port": "TLS-Port",
+          "token": "Bridge-Token",
+          "name": "Bridge-Name (optional)"
+        }
+      },
+      "confirm_certificate": {
+        "title": "FHEM-Zertifikat bestätigen",
+        "description": "Vergleiche den Fingerabdruck {fingerprint} mit TLS_FINGERPRINT in FHEM. Das Secret wird erst nach Bestätigung übermittelt.",
+        "data": {
+          "confirm": "Fingerabdruck stimmt überein",
+          "fingerprint": "SHA-256-Fingerabdruck"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung, Zertifikatsprüfung oder Anmeldung fehlgeschlagen.",
+      "connection_timeout": "FHEM antwortet nicht rechtzeitig. Prüfe Adresse, Port, HA-Quelladresse und ob bereits eine Verbindung besteht.",
+      "certificate_changed": "Das FHEM-Zertifikat hat sich geändert. Beginne die Einrichtung erneut und prüfe den neuen Fingerabdruck.",
+      "incompatible_protocol": "Das FHEM-Modul unterstützt das benötigte Bridge-Protokoll nicht.",
+      "invalid_server_identity": "FHEM hat keine gültige Instanz-ID übermittelt."
+    },
+    "abort": {
+      "certificate_rejected": "Das Zertifikat wurde nicht bestätigt."
+    }
+  },
+  "options": {
+    "step": {
+      "write": {
+        "title": "Schreibbare FHEM-Geräte",
+        "description": "Wähle, welche Geräte HA steuern und bei welchen es vorhandene FHEM-Attribute ändern darf.",
+        "data": {
+          "writable": "Schreibbare Geräte",
+          "query": "Get-Abfragen erlauben",
+          "edit_attributes": "Attribute ändern erlauben",
+          "technical": "Technische Befehle erlauben"
+        }
+      },
+      "selection": {
+        "title": "Bereits importierte Geräte",
+        "description": "**Bereits importiert · {devices} Geräte · {count} FHEM-Definitionen**\n\n{rows}\n\nVorgemerkte Definitionen außerhalb des Katalogs: {missing}.",
+        "menu_options": {
+          "init": "Zur Bridge-Konfiguration"
+        }
+      },
+      "add_devices": {
+        "title": "Geräte importieren",
+        "description": "Die Importoberfläche wurde noch nicht geladen. Lade die Browserseite neu und öffne das Zahnrad erneut."
+      },
+      "group": {
+        "title": "Gemeinsame HA-Geräteseite festlegen",
+        "description": "Wähle die Hauptdefinition der Gruppe. Anschließend kannst du ihre Kanäle bearbeiten.",
+        "data": {
+          "anchor": "Hauptdefinition für Name und Geräteseite"
+        }
+      },
+      "areas": {
+        "title": "Bereiche und Labels",
+        "description": "Pro neuem Gerät einen HA-Bereich und optionale Labels wählen. Vorhandene Bereiche stehen zuerst. Set, Get, Attributänderungen und technische Befehle sind für neue Kanäle freigegeben. Die Freigaben kannst du am Geräte-Zahnrad ändern.",
+        "submit": "Gruppierung speichern"
+      },
+      "connection": {
+        "title": "Bridge-Verbindung",
+        "data": {
+          "host": "FHEM-Adresse",
+          "port": "Port",
+          "token": "Secret",
+          "name": "Bridge-Name"
+        },
+        "description": "Leer gelassenes Secret wird aus dem bestehenden Eintrag übernommen. Die Verbindungsprüfung unterbricht die Bridge kurz."
+      },
+      "connection_certificate": {
+        "title": "Zertifikat bestätigen",
+        "description": "Vergleiche den Fingerabdruck mit TLS_FINGERPRINT in FHEM.\n\n{fingerprint}",
+        "data": {
+          "confirm": "Fingerabdruck stimmt überein",
+          "fingerprint": "SHA-256-Fingerabdruck"
+        }
+      },
+      "group_members": {
+        "title": "Geräte gruppieren",
+        "description": "{device}\n\nWähle die zugehörigen Definitionen. Eine leere Auswahl löst die bestehende Gruppe auf.",
+        "submit": "Gruppierung speichern",
+        "data": {
+          "members": "Zugehörige Definitionen / Kanäle"
+        }
+      },
+      "offline": {
+        "title": "Bridge nicht verbunden",
+        "menu_options": {
+          "connection": "Verbindung konfigurieren",
+          "init": "Zur Bridge-Konfiguration"
+        }
+      },
+      "init": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM-Konfiguration →]({config_url})**\n\n**[Vorlagen verwalten →]({template_url})**\n\n- Automatisch aktualisiert: **{template_updated}**\n- Neue Standards verfügbar: **{template_pending}**\n- Dateifehler: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Geräte importieren",
+          "group": "Geräte gruppieren",
+          "catalog": "Bereits importierte Geräte",
+          "connection": "Verbindung konfigurieren"
+        }
+      },
+      "init_dirty": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM-Konfiguration →]({config_url})**\n\n⚠ Ungespeicherte Änderungen in FHEM.\n\n**[Vorlagen verwalten →]({template_url})**\n\n- Automatisch aktualisiert: **{template_updated}**\n- Neue Standards verfügbar: **{template_pending}**\n- Dateifehler: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Geräte importieren",
+          "group": "Geräte gruppieren",
+          "catalog": "Bereits importierte Geräte",
+          "connection": "Verbindung konfigurieren"
+        }
+      },
+      "init_save_error": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM-Konfiguration →]({config_url})**\n\n⚠ FHEM-Konfiguration konnte nicht gespeichert werden.\n\n**[Vorlagen verwalten →]({template_url})**\n\n- Automatisch aktualisiert: **{template_updated}**\n- Neue Standards verfügbar: **{template_pending}**\n- Dateifehler: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Geräte importieren",
+          "group": "Geräte gruppieren",
+          "catalog": "Bereits importierte Geräte",
+          "connection": "Verbindung konfigurieren"
+        }
+      },
+      "init_clean": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM-Konfiguration →]({config_url})**\n\nKeine ungespeicherten Änderungen gemeldet.\n\n**[Vorlagen verwalten →]({template_url})**\n\n- Automatisch aktualisiert: **{template_updated}**\n- Neue Standards verfügbar: **{template_pending}**\n- Dateifehler: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Geräte importieren",
+          "group": "Geräte gruppieren",
+          "catalog": "Bereits importierte Geräte",
+          "connection": "Verbindung konfigurieren"
+        }
+      },
+      "init_unknown": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM-Konfiguration →]({config_url})**\n\nFHEM-Speicherstatus nicht verfügbar.\n\n**[Vorlagen verwalten →]({template_url})**\n\n- Automatisch aktualisiert: **{template_updated}**\n- Neue Standards verfügbar: **{template_pending}**\n- Dateifehler: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Geräte importieren",
+          "group": "Geräte gruppieren",
+          "catalog": "Bereits importierte Geräte",
+          "connection": "Verbindung konfigurieren"
+        }
+      }
+    },
+    "abort": {
+      "cannot_connect": "Die FHEM Bridge ist nicht erreichbar.",
+      "certificate_rejected": "Zertifikat nicht bestätigt.",
+      "wrong_bridge": "Die Adresse gehört zu einer anderen Bridge.",
+      "connection_saved": "Verbindung gespeichert. Die Bridge wird neu geladen.",
+      "selection_changed": "Der Gerätebestand wurde seit dem Öffnen geändert. Öffne den Import erneut."
+    },
+    "error": {
+      "cannot_connect": "Die FHEM Bridge ist nicht erreichbar.",
+      "invalid_group": "Wähle eine Hauptdefinition aus dem FHEM-Katalog.",
+      "duplicate_assignment": "Wähle denselben Eintrag entweder als Bereich oder als Label.",
+      "invalid_assignment": "Wähle einen Eintrag aus der Liste."
+    }
+  },
+  "services": {
+    "get_attributes": {
+      "name": "FHEM-Attribute lesen",
+      "description": "Gibt alle definierten Attribute eines FHEM-Geräts zurück.",
+      "fields": {
+        "device_id": {
+          "name": "FHEM-Gerät"
+        },
+        "source": {
+          "name": "FHEM-Kanal-ID (optional)"
+        }
+      }
+    },
+    "set_attribute": {
+      "name": "FHEM-Attribut ändern",
+      "description": "Ändert ein vorhandenes Attribut eines in HA schreibbar ausgewählten Geräts.",
+      "fields": {
+        "device_id": {
+          "name": "FHEM-Gerät"
+        },
+        "source": {
+          "name": "FHEM-Kanal-ID (optional)"
+        },
+        "attribute": {
+          "name": "Attribut"
+        },
+        "value": {
+          "name": "Wert"
+        }
+      }
+    },
+    "invoke": {
+      "name": "FHEM-Aktion ausführen",
+      "description": "Ruft einen FHEM-Set-Befehl für ein in HA schreibbar ausgewähltes Gerät auf.",
+      "fields": {
+        "device_id": {
+          "name": "FHEM-Gerät"
+        },
+        "source": {
+          "name": "FHEM-Kanal-ID (optional)"
+        },
+        "action": {
+          "name": "Aktions-ID"
+        },
+        "args": {
+          "name": "Argumente"
+        }
+      }
+    },
+    "execute": {
+      "name": "FHEM-Befehl ausführen",
+      "description": "Führt einen Set- oder Get-Befehl aus.",
+      "fields": {
+        "device_id": {
+          "name": "Gerät"
+        },
+        "source": {
+          "name": "FHEM-Kanal-ID (optional)"
+        },
+        "kind": {
+          "name": "Befehlsart"
+        },
+        "command": {
+          "name": "Befehl"
+        },
+        "arguments": {
+          "name": "Fertige FHEM-Argumente",
+          "description": "Geordnete Liste im FHEM-Format. Alternativ Formularwerte angeben."
+        },
+        "inputs": {
+          "name": "Formularwerte",
+          "description": "Geordnete Liste der Eingaben. Die Bridge prüft und formatiert sie anhand des FHEM-Befehls."
+        }
+      }
+    }
+  },
+  "config_subentries": {
+    "device": {
+      "title": "FHEM-Gerät",
+      "entry_type": "Gerätekonfiguration",
+      "initiate_flow": {
+        "user": "Gerät hinzufügen",
+        "reconfigure": "Geräteoptionen"
+      },
+      "step": {
+        "user": {
+          "title": "Gerät hinzufügen",
+          "description": "Ein Gerät wählen. Für mehrere Geräte den Sammelimport am Bridge-Zahnrad öffnen.",
+          "data": {
+            "device": "Gerät / Gruppe"
+          }
+        },
+        "import": {
+          "title": "Bereich und Labels",
+          "description": "Set, Get, Attributänderungen und technische Befehle sind für neue Kanäle freigegeben.",
+          "data": {
+            "area": "HA-Bereich",
+            "labels": "HA-Labels"
+          },
+          "submit": "Importieren"
+        },
+        "reconfigure": {
+          "title": "Gerätekonfiguration",
+          "description": "**{device}**\n\n[Geräteseite gestalten und Vorlage wechseln]({device_url})",
+          "menu_options": {
+            "permissions": "Freigaben und Kanäle"
+          }
+        },
+        "assignment": {
+          "title": "Kanalzuordnung",
+          "description": "Alle ausgewählten Definitionen erscheinen auf einer HA-Geräteseite. Definitionen anderer importierter Geräte lassen sich über „Geräte gruppieren“ am Bridge-Zahnrad umordnen.",
+          "data": {
+            "members": "Definitionen / Kanäle"
+          }
+        },
+        "permissions": {
+          "title": "Geräteoptionen",
+          "description": "{device}\n\nLege fest, welche Befehle HA ausführen darf. Die Freigaben gelten auch für Automationen. Readings und Geräteseitengestaltung bleiben ohne Freigabe verfügbar.",
+          "data": {
+            "writable": "Steuern erlauben (Set)",
+            "query": "Get-Abfragen erlauben",
+            "edit_attributes": "Attribute ändern erlauben",
+            "technical": "Technische Befehle erlauben",
+            "subscribe_logs": "FHEM-Protokolle abonnieren",
+            "edit_assignment": "Anschließend Kanalzuordnung bearbeiten"
+          }
+        }
+      },
+      "error": {
+        "invalid_assignment": "Wähle einen Eintrag aus der Liste.",
+        "duplicate_assignment": "Ein Eintrag kann hier Bereich oder Label werden.",
+        "empty_group": "Wähle mindestens eine Definition. Zum vollständigen Entfernen das Gerätemenü verwenden."
+      },
+      "abort": {
+        "cannot_connect": "Bridge nicht erreichbar.",
+        "no_devices": "Alle angebotenen Geräte sind bereits importiert.",
+        "already_imported": "Dieses Gerät oder ein Kanal ist inzwischen bereits importiert.",
+        "saved": "Geräteoptionen gespeichert.",
+        "logs_require_update": "Für Protokollabonnements zuerst 98_HABridge.pm aktualisieren."
+      },
+      "create_entry": {
+        "default": "Gerät importiert. Freigaben am Geräte-Zahnrad bearbeiten."
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "toggle": {
+        "name": "Umschalten"
+      },
+      "toggle_channel": {
+        "name": "{channel} · Umschalten"
+      }
+    },
+    "sensor": {
+      "temperature": {
+        "name": "Temperatur"
+      },
+      "temperature_channel": {
+        "name": "{channel} · Temperatur"
+      },
+      "target_temperature": {
+        "name": "Solltemperatur"
+      },
+      "target_temperature_channel": {
+        "name": "{channel} · Solltemperatur"
+      },
+      "humidity": {
+        "name": "Luftfeuchtigkeit"
+      },
+      "humidity_channel": {
+        "name": "{channel} · Luftfeuchtigkeit"
+      },
+      "dew_point": {
+        "name": "Taupunkt"
+      },
+      "dew_point_channel": {
+        "name": "{channel} · Taupunkt"
+      },
+      "pressure": {
+        "name": "Luftdruck"
+      },
+      "pressure_channel": {
+        "name": "{channel} · Luftdruck"
+      },
+      "wind_speed": {
+        "name": "Windgeschwindigkeit"
+      },
+      "wind_speed_channel": {
+        "name": "{channel} · Windgeschwindigkeit"
+      },
+      "wind_direction": {
+        "name": "Windrichtung"
+      },
+      "wind_direction_channel": {
+        "name": "{channel} · Windrichtung"
+      },
+      "rain": {
+        "name": "Niederschlag"
+      },
+      "rain_channel": {
+        "name": "{channel} · Niederschlag"
+      },
+      "illuminance": {
+        "name": "Beleuchtungsstärke"
+      },
+      "illuminance_channel": {
+        "name": "{channel} · Beleuchtungsstärke"
+      },
+      "power": {
+        "name": "Leistung"
+      },
+      "power_channel": {
+        "name": "{channel} · Leistung"
+      },
+      "voltage": {
+        "name": "Spannung"
+      },
+      "voltage_channel": {
+        "name": "{channel} · Spannung"
+      },
+      "current": {
+        "name": "Stromstärke"
+      },
+      "current_channel": {
+        "name": "{channel} · Stromstärke"
+      },
+      "frequency": {
+        "name": "Frequenz"
+      },
+      "frequency_channel": {
+        "name": "{channel} · Frequenz"
+      },
+      "flow": {
+        "name": "Durchfluss"
+      },
+      "flow_channel": {
+        "name": "{channel} · Durchfluss"
+      },
+      "valve_position": {
+        "name": "Ventilstellung"
+      },
+      "valve_position_channel": {
+        "name": "{channel} · Ventilstellung"
+      },
+      "battery_level": {
+        "name": "Batterieladung"
+      },
+      "battery_level_channel": {
+        "name": "{channel} · Batterieladung"
+      },
+      "battery": {
+        "name": "Batteriestatus"
+      },
+      "battery_channel": {
+        "name": "{channel} · Batteriestatus"
+      },
+      "raw_state": {
+        "name": "FHEM-Zustand"
+      },
+      "raw_state_channel": {
+        "name": "{channel} · FHEM-Zustand"
+      },
+      "radio_message": {
+        "name": "Funkmeldung"
+      },
+      "radio_message_channel": {
+        "name": "{channel} · Funkmeldung"
+      },
+      "gas_flow": {
+        "name": "Gasdurchfluss"
+      },
+      "gas_flow_channel": {
+        "name": "{channel} · Gasdurchfluss"
+      }
+    },
+    "binary_sensor": {
+      "opening": {
+        "name": "Öffnung"
+      },
+      "opening_channel": {
+        "name": "{channel} · Öffnung"
+      },
+      "motion": {
+        "name": "Bewegung"
+      },
+      "motion_channel": {
+        "name": "{channel} · Bewegung"
+      },
+      "smoke": {
+        "name": "Rauch"
+      },
+      "smoke_channel": {
+        "name": "{channel} · Rauch"
+      },
+      "moisture": {
+        "name": "Nässe"
+      },
+      "moisture_channel": {
+        "name": "{channel} · Nässe"
+      },
+      "rain_detected": {
+        "name": "Regen"
+      },
+      "rain_detected_channel": {
+        "name": "{channel} · Regen"
+      }
+    },
+    "event": {
+      "events": {
+        "name": "Ereignisse"
+      },
+      "events_channel": {
+        "name": "{channel} · Ereignisse"
+      }
+    },
+    "number": {
+      "dimmer_level": {
+        "name": "Helligkeit"
+      },
+      "dimmer_level_channel": {
+        "name": "{channel} · Helligkeit"
+      },
+      "output_level": {
+        "name": "Ausgangspegel"
+      },
+      "output_level_channel": {
+        "name": "{channel} · Ausgangspegel"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+schema: 1
+key: fs20ms2
+name: FS20 MS2 · Markisensteuerung
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20ms2
+default_role: awning
+roles:
+  awning:
+    name: Markise
+    layout: awning
+items: []

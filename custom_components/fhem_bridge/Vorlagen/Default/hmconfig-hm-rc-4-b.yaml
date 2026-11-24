@@ -1,0 +1,26 @@
+schema: 1
+key: hmconfig-hm-rc-4-b
+name: HM-RC-4-B
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 003B.
+automatic: false
+default_role: remote
+roles:
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-RC-4-B
+  channels:
+    '00': metadata

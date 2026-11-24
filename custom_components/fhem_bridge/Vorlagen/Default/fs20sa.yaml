@@ -1,0 +1,17 @@
+schema: 1
+key: fs20sa
+name: FS20 SA · Funkempfänger
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20sa
+default_role: metadata
+roles:
+  metadata:
+    name: Funkzustand
+    layout: metadata
+    readings:
+      state: sensor
+items: []

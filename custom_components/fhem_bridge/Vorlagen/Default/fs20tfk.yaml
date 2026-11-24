@@ -1,0 +1,21 @@
+schema: 1
+key: fs20tfk
+name: FS20 TFK · Tür-/Fensterkontakt
+origin: default
+version: 2026-11-16T16:36:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20tfk
+default_role: contact
+roles:
+  contact:
+    name: Tür-/Fensterkontakt
+    layout: contact
+    readings:
+      contact: diagnostic
+      sabotageError: diagnostic
+    binary:
+    - state
+    - contact
+items: []

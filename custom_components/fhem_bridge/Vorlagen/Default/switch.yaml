@@ -1,0 +1,37 @@
+schema: 1
+key: switch
+name: Schaltaktor
+origin: default
+version: 2026-11-12T12:00:00Z-02
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-SW2-FM
+  - HM-LC-SW4-DR
+  - HM-LC-SW4-SM
+  channels:
+    '00': metadata
+default_role: switch
+roles:
+  switch:
+    name: Schalten
+    layout: switch
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []

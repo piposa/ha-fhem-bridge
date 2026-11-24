@@ -1,0 +1,17 @@
+schema: 1
+key: fs20tk
+name: FS20 TK · Klingelsender
+origin: default
+version: 2026-11-16T16:36:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20tk
+default_role: remote
+roles:
+  remote:
+    name: Funkereignisse
+    layout: remote
+    readings:
+      state: diagnostic
+items: []

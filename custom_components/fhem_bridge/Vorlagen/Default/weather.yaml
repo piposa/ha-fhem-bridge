@@ -1,0 +1,74 @@
+schema: 1
+key: weather
+name: Wettersensor
+origin: default
+version: 2026-11-16T10:00:00Z-01
+match:
+- type: CUL_WS
+- type: TSCUL_WS
+- type: HMS
+  models: [hms100-t, hms100-tf]
+- type: TSHMS
+  models: [hms100-t, hms100-tf]
+- type: HMS
+  readings:
+  - temperature
+- type: TSHMS
+  readings:
+  - temperature
+default_role: weather
+roles:
+  weather:
+    name: Wettersensor
+    layout: weather
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      dewpoint:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      wind:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_speed
+          state_class: measurement
+          unit_of_measurement: km/h
+      windSpeed: sensor
+      windDirection:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_direction
+          state_class: measurement_angle
+          unit_of_measurement: °
+      wind_direction:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_direction
+          state_class: measurement_angle
+          unit_of_measurement: °
+      rain: sensor
+      pressure:
+        mode: sensor
+        sensor_metadata:
+          device_class: atmospheric_pressure
+          state_class: measurement
+          unit_of_measurement: hPa
+      israining: binary
+      battery: diagnostic
+      batteryState: diagnostic
+      batteryLevel: diagnostic
+      state: diagnostic
+items: []

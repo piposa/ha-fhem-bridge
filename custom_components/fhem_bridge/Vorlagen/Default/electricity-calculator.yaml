@@ -1,0 +1,216 @@
+schema: 1
+key: electricity-calculator
+name: Stromzähler (Calculator)
+origin: default
+version: 2026-11-16T13:18:52Z-01
+match:
+- type: ElectricityCalculator
+default_role: meter
+roles:
+  meter:
+    name: Stromzähler
+    layout: meter
+    remaining_readings: diagnostic
+    reading_suffixes:
+      _CounterCurrent:
+        mode: sensor
+        label: Zählerstand
+        sensor_metadata:
+          device_class: energy
+          state_class: total
+          unit_of_measurement: kWh
+      _PowerCurrent:
+        mode: sensor
+        label: Leistung
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayAver:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayMin:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayMax:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayCount:
+        mode: diagnostic
+        sensor_metadata:
+          state_class: measurement
+      _PowerDaySum:
+        mode: diagnostic
+        sensor_metadata: {}
+      _EnergyDay:
+        mode: sensor
+        label: Energie heute
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostDay:
+        mode: sensor
+        label: Kosten heute
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterDay1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _CounterDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyMonth:
+        mode: sensor
+        label: Energie diesen Monat
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostMonth:
+        mode: sensor
+        label: Kosten diesen Monat
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterMonth1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _CounterMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyYear:
+        mode: sensor
+        label: Energie dieses Jahr
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostYear:
+        mode: sensor
+        label: Kosten dieses Jahr
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterYear1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _CounterYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyMeter:
+        mode: sensor
+        label: Energie Abrechnungszeitraum
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostMeter:
+        mode: diagnostic
+        label: Kosten Abrechnungszeitraum
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _CounterMeter1st:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _CounterMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _FinanceReserve:
+        mode: diagnostic
+        label: Vorauszahlungsreserve
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _MonthMeterReading:
+        mode: diagnostic
+        sensor_metadata:
+          state_class: measurement
+      _LastDV:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _LastDt:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: duration
+          state_class: measurement
+          unit_of_measurement: s
+items: []

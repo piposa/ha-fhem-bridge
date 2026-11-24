@@ -1,0 +1,31 @@
+schema: 1
+key: hmconfig-hm-lc-dim1t-cv
+name: HM-LC-DIM1T-CV
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0058.
+default_role: dimmer
+roles:
+  dimmer:
+    name: Lichtdimmer
+    layout: dimmer
+    readings:
+      state: internal
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-DIM1T-CV

@@ -1,0 +1,27 @@
+schema: 1
+key: level
+name: Analoger Ausgang
+origin: default
+version: 2026-11-12T12:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-AO-SM
+  role: metadata
+  channels:
+    '00': level
+    '01': level
+default_role: level
+roles:
+  level:
+    name: Analoger Ausgang
+    layout: level
+    readings:
+      state: internal
+      pct: internal
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []

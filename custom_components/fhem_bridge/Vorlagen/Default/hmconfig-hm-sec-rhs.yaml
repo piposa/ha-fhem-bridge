@@ -1,0 +1,23 @@
+schema: 1
+key: hmconfig-hm-sec-rhs
+name: HM-SEC-RHS
+origin: default
+version: 2026-11-16T16:36:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0030.
+automatic: false
+default_role: contact
+roles:
+  contact:
+    name: Tür-/Fensterkontakt
+    layout: contact
+    readings:
+      contact: diagnostic
+      sabotageError: diagnostic
+    binary:
+    - state
+    - contact
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-SEC-RHS

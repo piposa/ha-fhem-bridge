@@ -1,0 +1,28 @@
+schema: 1
+key: fs20su
+name: FS20 SU · Unterputz-Funkschalter
+origin: default
+version: 2026-11-16T15:00:00Z-02
+match:
+- type: FS20
+  models:
+  - fs20su
+default_role: switch
+roles:
+  switch:
+    name: Schalten
+    layout: switch
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+items: []

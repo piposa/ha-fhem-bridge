@@ -1,0 +1,41 @@
+schema: 1
+key: hmconfig-hm-lc-dim1pwm-cv
+name: HM-LC-DIM1PWM-CV
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0067.
+automatic: false
+default_role: dimmer
+roles:
+  dimmer:
+    name: Lichtdimmer
+    layout: dimmer
+    readings:
+      state: internal
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-DIM1PWM-CV
+  role: metadata
+  channels:
+    '00': dimmer
+    '01': dimmer

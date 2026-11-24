@@ -1,0 +1,28 @@
+schema: 1
+key: hmconfig-hm-sec-mdir-3
+name: HM-SEC-MDIR-3
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 00F7.
+default_role: motion
+roles:
+  motion:
+    name: Bewegungsmelder
+    layout: motion
+    readings:
+      brightness: sensor
+      motionCount: diagnostic
+      motionDuration:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: duration
+          state_class: measurement
+          unit_of_measurement: s
+    binary:
+    - state
+    - motion
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-SEC-MDIR-3

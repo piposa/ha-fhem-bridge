@@ -1,0 +1,107 @@
+schema: 1
+key: hmconfig-hm-ws550
+name: HM-WS550
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 000B.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  temperature:
+    name: Temperatur und Luftfeuchte
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      measured-temp:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: internal
+  weather:
+    name: Wettersensor
+    layout: weather
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      dewpoint:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      wind:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_speed
+          state_class: measurement
+          unit_of_measurement: km/h
+      windSpeed: sensor
+      windDirection:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_direction
+          state_class: measurement_angle
+          unit_of_measurement: °
+      wind_direction:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_direction
+          state_class: measurement_angle
+          unit_of_measurement: °
+      rain: sensor
+      pressure:
+        mode: sensor
+        sensor_metadata:
+          device_class: atmospheric_pressure
+          state_class: measurement
+          unit_of_measurement: hPa
+      israining: binary
+      battery: diagnostic
+      batteryState: diagnostic
+      batteryLevel: diagnostic
+      state: diagnostic
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-WS550
+  channels:
+    '00': metadata
+    '01': temperature
+    '02': temperature
+    '03': temperature
+    '04': temperature
+    '05': temperature
+    '06': temperature
+    '07': temperature
+    08: temperature
+    '10': weather

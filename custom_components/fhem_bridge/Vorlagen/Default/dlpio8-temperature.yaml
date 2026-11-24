@@ -1,0 +1,31 @@
+schema: 1
+key: dlpio8-temperature
+name: DLPIO8 Temperatur
+origin: default
+version: 2026-11-24T11:00:00Z-01
+description: Für in FHEM bereits in °C umgerechnete DLPIO8Voltage-value-Readings.
+  Keine zusätzliche Umrechnung; für echte Spannungen oder Ströme Einheit und Vorlage
+  anpassen.
+match:
+- type: DLPIO8Voltage
+  models:
+  - DLPIO8Voltage
+  readings:
+  - value
+- type: DLPIO8Voltage
+  readings:
+  - value
+default_role: temperature
+roles:
+  temperature:
+    name: Temperatur
+    layout: temperature
+    readings:
+      value:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      state: diagnostic
+items: []

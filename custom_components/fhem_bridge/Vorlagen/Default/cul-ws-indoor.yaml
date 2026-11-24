@@ -1,0 +1,35 @@
+schema: 1
+key: cul-ws-indoor
+name: CUL_WS Innenwettersensor
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - Indoor
+default_role: weather
+roles:
+  weather:
+    name: CUL_WS Innenwettersensor
+    layout: weather
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      pressure:
+        mode: sensor
+        sensor_metadata:
+          device_class: atmospheric_pressure
+          state_class: measurement
+          unit_of_measurement: hPa
+      state: diagnostic
+items: []

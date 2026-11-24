@@ -1,0 +1,4 @@
+# HABridge update source: module, icon and licence. No automatic restart or reload.
+UPD 2026-11-24_12:21:57 96638 FHEM/98_HABridge.pm
+UPD 2026-11-11_16:48:43 2004 www/images/default/habridge.png
+UPD 2026-11-20_13:10:28 1081 FHEM/HABridge-LICENSE.txt

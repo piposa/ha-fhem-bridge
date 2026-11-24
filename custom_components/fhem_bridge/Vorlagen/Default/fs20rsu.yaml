@@ -1,0 +1,15 @@
+schema: 1
+key: fs20rsu
+name: FS20 RSU · Unterputz-Rollladenschalter
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20rsu
+default_role: cover
+roles:
+  cover:
+    name: Rollladen
+    layout: cover
+items: []

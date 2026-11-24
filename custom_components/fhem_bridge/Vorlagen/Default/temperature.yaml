@@ -1,0 +1,50 @@
+schema: 1
+key: temperature
+name: Temperatur und Luftfeuchte
+origin: default
+version: 2026-11-16T10:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-WDS30-OT2-SM
+  - HM-WDS30-OT2-SM-2
+  channels:
+    '00': metadata
+    '05': threshold
+default_role: temperature
+roles:
+  temperature:
+    name: Temperatur und Luftfeuchte
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      measured-temp:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: internal
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  threshold:
+    name: Schwellenwerte
+    layout: threshold
+    readings:
+      state: sensor
+      trigger: sensor
+items: []

@@ -1,0 +1,17 @@
+schema: 1
+key: fs20tc1
+name: FS20 TC1 · Funk-Sender
+origin: default
+version: 2026-11-16T16:36:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20tc1
+default_role: remote
+roles:
+  remote:
+    name: Funkereignisse
+    layout: remote
+    readings:
+      state: diagnostic
+items: []

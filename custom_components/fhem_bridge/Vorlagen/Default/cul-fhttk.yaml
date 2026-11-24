@@ -1,0 +1,20 @@
+schema: 1
+key: cul-fhttk
+name: FHT-Tür-/Fensterkontakt
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: CUL_FHTTK
+default_role: contact
+roles:
+  contact:
+    name: FHT-Tür-/Fensterkontakt
+    layout: contact
+    remaining_readings: diagnostic
+    readings:
+      Window: diagnostic
+      state: diagnostic
+    binary:
+    - Window
+    - state
+items: []

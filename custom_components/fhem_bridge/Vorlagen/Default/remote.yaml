@@ -1,0 +1,26 @@
+schema: 1
+key: remote
+name: Taster
+origin: default
+version: 2026-11-12T12:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-PB-2-WM55
+  - HM-PB-6-WM55
+  - HM-RC-4-B
+  channels:
+    '00': metadata
+default_role: remote
+roles:
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []

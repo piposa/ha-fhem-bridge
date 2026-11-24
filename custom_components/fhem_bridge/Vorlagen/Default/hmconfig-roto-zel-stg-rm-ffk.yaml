@@ -1,0 +1,15 @@
+schema: 1
+key: hmconfig-roto-zel-stg-rm-ffk
+name: ROTO_ZEL-STG-RM-FFK
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 0082.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+items: []
+match:
+- type: CUL_HM
+  models:
+  - ROTO_ZEL-STG-RM-FFK

@@ -1,0 +1,498 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to FHEM Bridge",
+        "description": "Enter the FHEM address, port and shared secret from the HABridge definition.",
+        "data": {
+          "host": "Host",
+          "port": "TLS port",
+          "token": "Bridge token",
+          "name": "Bridge name (optional)"
+        }
+      },
+      "confirm_certificate": {
+        "title": "Confirm FHEM certificate",
+        "description": "Compare fingerprint {fingerprint} with TLS_FINGERPRINT in FHEM. The secret is sent only after confirmation.",
+        "data": {
+          "confirm": "Fingerprint matches",
+          "fingerprint": "SHA-256 fingerprint"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect, verify the certificate or authenticate with the bridge.",
+      "connection_timeout": "FHEM did not respond in time. Check address, port, allowed HA source address and existing connections.",
+      "certificate_changed": "The FHEM certificate changed. Restart setup and verify the new fingerprint.",
+      "incompatible_protocol": "The FHEM module does not support the required bridge protocol.",
+      "invalid_server_identity": "FHEM did not return a valid instance ID."
+    },
+    "abort": {
+      "certificate_rejected": "The certificate was not confirmed."
+    }
+  },
+  "options": {
+    "step": {
+      "write": {
+        "title": "Writable FHEM devices",
+        "description": "Select which devices Home Assistant can control and edit existing FHEM attributes for.",
+        "data": {
+          "writable": "Writable devices",
+          "query": "Allow Get queries",
+          "edit_attributes": "Allow attribute changes",
+          "technical": "Allow technical commands"
+        }
+      },
+      "selection": {
+        "title": "Imported devices",
+        "description": "**Already imported · {devices} devices · {count} FHEM definitions**\n\n{rows}\n\nSelected definitions currently absent from the catalog: {missing}.",
+        "menu_options": {
+          "init": "Back to bridge configuration"
+        }
+      },
+      "add_devices": {
+        "title": "Import devices",
+        "description": "The import interface has not loaded yet. Reload the browser page and open options again."
+      },
+      "group": {
+        "title": "Set up a shared HA device page",
+        "description": "Choose the main definition, then edit the group members.",
+        "data": {
+          "anchor": "Main definition for the name and device page"
+        }
+      },
+      "areas": {
+        "title": "Areas and labels",
+        "description": "Choose an HA area and optional labels for each new device. Existing areas come first. Set, Get, attribute changes and technical commands are enabled for new channels. Change permissions using the device configuration button.",
+        "submit": "Save grouping"
+      },
+      "connection": {
+        "title": "Bridge connection",
+        "data": {
+          "host": "FHEM address",
+          "port": "Port",
+          "token": "Secret",
+          "name": "Bridge name"
+        },
+        "description": "Leave the secret empty to keep the existing one. Testing the connection briefly interrupts the bridge."
+      },
+      "connection_certificate": {
+        "title": "Confirm certificate",
+        "description": "Compare the fingerprint with TLS_FINGERPRINT in FHEM.\n\n{fingerprint}",
+        "data": {
+          "confirm": "Fingerprint matches",
+          "fingerprint": "SHA-256 fingerprint"
+        }
+      },
+      "group_members": {
+        "title": "Group devices",
+        "description": "{device}\n\nChoose the related definitions. An empty selection dissolves the existing group.",
+        "submit": "Save grouping",
+        "data": {
+          "members": "Related definitions / channels"
+        }
+      },
+      "offline": {
+        "title": "Bridge disconnected",
+        "menu_options": {
+          "connection": "Configure connection",
+          "init": "Back to bridge configuration"
+        }
+      },
+      "init": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM configuration →]({config_url})**\n\n**[Manage templates →]({template_url})**\n\n- Updated automatically: **{template_updated}**\n- New defaults available: **{template_pending}**\n- File errors: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Import devices",
+          "group": "Group devices",
+          "catalog": "Imported devices",
+          "connection": "Configure connection"
+        }
+      },
+      "init_dirty": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM configuration →]({config_url})**\n\n⚠ Unsaved changes in FHEM.\n\n**[Manage templates →]({template_url})**\n\n- Updated automatically: **{template_updated}**\n- New defaults available: **{template_pending}**\n- File errors: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Import devices",
+          "group": "Group devices",
+          "catalog": "Imported devices",
+          "connection": "Configure connection"
+        }
+      },
+      "init_save_error": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM configuration →]({config_url})**\n\n⚠ FHEM configuration could not be saved.\n\n**[Manage templates →]({template_url})**\n\n- Updated automatically: **{template_updated}**\n- New defaults available: **{template_pending}**\n- File errors: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Import devices",
+          "group": "Group devices",
+          "catalog": "Imported devices",
+          "connection": "Configure connection"
+        }
+      },
+      "init_clean": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM configuration →]({config_url})**\n\nNo unsaved changes reported.\n\n**[Manage templates →]({template_url})**\n\n- Updated automatically: **{template_updated}**\n- New defaults available: **{template_pending}**\n- File errors: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Import devices",
+          "group": "Group devices",
+          "catalog": "Imported devices",
+          "connection": "Configure connection"
+        }
+      },
+      "init_unknown": {
+        "title": "FHEM Bridge",
+        "description": "**[FHEM configuration →]({config_url})**\n\nFHEM configuration status is unavailable.\n\n**[Manage templates →]({template_url})**\n\n- Updated automatically: **{template_updated}**\n- New defaults available: **{template_pending}**\n- File errors: **{template_errors}**",
+        "menu_options": {
+          "add_devices": "Import devices",
+          "group": "Group devices",
+          "catalog": "Imported devices",
+          "connection": "Configure connection"
+        }
+      }
+    },
+    "abort": {
+      "cannot_connect": "The FHEM Bridge is unavailable.",
+      "certificate_rejected": "Certificate not confirmed.",
+      "wrong_bridge": "This address belongs to another bridge.",
+      "connection_saved": "Connection saved. The bridge is reloading.",
+      "selection_changed": "Device selection changed. Reopen the import."
+    },
+    "error": {
+      "cannot_connect": "The FHEM Bridge is unavailable.",
+      "invalid_group": "Select a main definition from the FHEM catalog.",
+      "duplicate_assignment": "Choose the same entry as either an area or a label.",
+      "invalid_assignment": "Choose an entry from the list."
+    }
+  },
+  "services": {
+    "get_attributes": {
+      "name": "Read FHEM attributes",
+      "description": "Return every defined attribute of one FHEM device.",
+      "fields": {
+        "device_id": {
+          "name": "FHEM device"
+        },
+        "source": {
+          "name": "FHEM channel ID (optional)"
+        }
+      }
+    },
+    "set_attribute": {
+      "name": "Change FHEM attribute",
+      "description": "Change an existing attribute of a device selected as writable in Home Assistant.",
+      "fields": {
+        "device_id": {
+          "name": "FHEM device"
+        },
+        "source": {
+          "name": "FHEM channel ID (optional)"
+        },
+        "attribute": {
+          "name": "Attribute"
+        },
+        "value": {
+          "name": "Value"
+        }
+      }
+    },
+    "invoke": {
+      "name": "Run FHEM action",
+      "description": "Run a FHEM set command for a device selected as writable in Home Assistant.",
+      "fields": {
+        "device_id": {
+          "name": "FHEM device"
+        },
+        "source": {
+          "name": "FHEM channel ID (optional)"
+        },
+        "action": {
+          "name": "Action ID"
+        },
+        "args": {
+          "name": "Arguments"
+        }
+      }
+    },
+    "execute": {
+      "name": "Run FHEM command",
+      "description": "Run a Set or Get command.",
+      "fields": {
+        "device_id": {
+          "name": "Device"
+        },
+        "source": {
+          "name": "FHEM channel ID (optional)"
+        },
+        "kind": {
+          "name": "Operation"
+        },
+        "command": {
+          "name": "Command"
+        },
+        "arguments": {
+          "name": "Raw FHEM arguments",
+          "description": "Ordered list in FHEM format. Use form values as an alternative."
+        },
+        "inputs": {
+          "name": "Form values",
+          "description": "Ordered list of inputs. The bridge validates and formats them for the FHEM command."
+        }
+      }
+    }
+  },
+  "config_subentries": {
+    "device": {
+      "title": "FHEM device",
+      "entry_type": "Device configuration",
+      "initiate_flow": {
+        "user": "Add device",
+        "reconfigure": "Device options"
+      },
+      "step": {
+        "user": {
+          "title": "Add device",
+          "description": "Choose one device. For multiple devices, open the bulk import using the bridge configuration button.",
+          "data": {
+            "device": "Device / group"
+          }
+        },
+        "import": {
+          "title": "Area and labels",
+          "description": "Set, Get, attribute changes and technical commands are enabled for new channels.",
+          "data": {
+            "area": "HA area",
+            "labels": "HA labels"
+          },
+          "submit": "Import"
+        },
+        "reconfigure": {
+          "title": "Device configuration",
+          "description": "**{device}**\n\n[Customize device page and change template]({device_url})",
+          "menu_options": {
+            "permissions": "Permissions and channels"
+          }
+        },
+        "assignment": {
+          "title": "Channel membership",
+          "description": "All selected definitions appear on one HA device page. Use “Group devices” on the bridge to move definitions from another imported device.",
+          "data": {
+            "members": "Definitions / channels"
+          }
+        },
+        "permissions": {
+          "title": "Device options",
+          "description": "{device}\n\nChoose which commands HA may execute. Permissions also apply to automations. Readings and layout configuration remain available without permission.",
+          "data": {
+            "writable": "Allow control (Set)",
+            "query": "Allow Get queries",
+            "edit_attributes": "Allow attribute changes",
+            "technical": "Allow technical commands",
+            "subscribe_logs": "Subscribe to FHEM logs",
+            "edit_assignment": "Edit channel membership next"
+          }
+        }
+      },
+      "error": {
+        "invalid_assignment": "Choose an entry from the list.",
+        "duplicate_assignment": "Use an entry as either area or label.",
+        "empty_group": "Choose at least one definition. To remove the device, use its menu."
+      },
+      "abort": {
+        "cannot_connect": "Bridge unavailable.",
+        "no_devices": "All offered devices are already imported.",
+        "already_imported": "This device or one of its channels has already been imported.",
+        "saved": "Device options saved.",
+        "logs_require_update": "Update 98_HABridge.pm before enabling log subscriptions."
+      },
+      "create_entry": {
+        "default": "Device imported. Change permissions using its configuration button."
+      }
+    }
+  },
+  "entity": {
+    "button": {
+      "toggle": {
+        "name": "Toggle"
+      },
+      "toggle_channel": {
+        "name": "{channel} · Toggle"
+      }
+    },
+    "sensor": {
+      "temperature": {
+        "name": "Temperature"
+      },
+      "temperature_channel": {
+        "name": "{channel} · Temperature"
+      },
+      "target_temperature": {
+        "name": "Target temperature"
+      },
+      "target_temperature_channel": {
+        "name": "{channel} · Target temperature"
+      },
+      "humidity": {
+        "name": "Humidity"
+      },
+      "humidity_channel": {
+        "name": "{channel} · Humidity"
+      },
+      "dew_point": {
+        "name": "Dew point"
+      },
+      "dew_point_channel": {
+        "name": "{channel} · Dew point"
+      },
+      "pressure": {
+        "name": "Pressure"
+      },
+      "pressure_channel": {
+        "name": "{channel} · Pressure"
+      },
+      "wind_speed": {
+        "name": "Wind speed"
+      },
+      "wind_speed_channel": {
+        "name": "{channel} · Wind speed"
+      },
+      "wind_direction": {
+        "name": "Wind direction"
+      },
+      "wind_direction_channel": {
+        "name": "{channel} · Wind direction"
+      },
+      "rain": {
+        "name": "Rainfall"
+      },
+      "rain_channel": {
+        "name": "{channel} · Rainfall"
+      },
+      "illuminance": {
+        "name": "Illuminance"
+      },
+      "illuminance_channel": {
+        "name": "{channel} · Illuminance"
+      },
+      "power": {
+        "name": "Power"
+      },
+      "power_channel": {
+        "name": "{channel} · Power"
+      },
+      "voltage": {
+        "name": "Voltage"
+      },
+      "voltage_channel": {
+        "name": "{channel} · Voltage"
+      },
+      "current": {
+        "name": "Current"
+      },
+      "current_channel": {
+        "name": "{channel} · Current"
+      },
+      "frequency": {
+        "name": "Frequency"
+      },
+      "frequency_channel": {
+        "name": "{channel} · Frequency"
+      },
+      "flow": {
+        "name": "Flow rate"
+      },
+      "flow_channel": {
+        "name": "{channel} · Flow rate"
+      },
+      "valve_position": {
+        "name": "Valve position"
+      },
+      "valve_position_channel": {
+        "name": "{channel} · Valve position"
+      },
+      "battery_level": {
+        "name": "Battery level"
+      },
+      "battery_level_channel": {
+        "name": "{channel} · Battery level"
+      },
+      "battery": {
+        "name": "Battery status"
+      },
+      "battery_channel": {
+        "name": "{channel} · Battery status"
+      },
+      "raw_state": {
+        "name": "FHEM state"
+      },
+      "raw_state_channel": {
+        "name": "{channel} · FHEM state"
+      },
+      "radio_message": {
+        "name": "Radio message"
+      },
+      "radio_message_channel": {
+        "name": "{channel} · Radio message"
+      },
+      "gas_flow": {
+        "name": "Gas flow rate"
+      },
+      "gas_flow_channel": {
+        "name": "{channel} · Gas flow rate"
+      }
+    },
+    "binary_sensor": {
+      "opening": {
+        "name": "Opening"
+      },
+      "opening_channel": {
+        "name": "{channel} · Opening"
+      },
+      "motion": {
+        "name": "Motion"
+      },
+      "motion_channel": {
+        "name": "{channel} · Motion"
+      },
+      "smoke": {
+        "name": "Smoke"
+      },
+      "smoke_channel": {
+        "name": "{channel} · Smoke"
+      },
+      "moisture": {
+        "name": "Moisture"
+      },
+      "moisture_channel": {
+        "name": "{channel} · Moisture"
+      },
+      "rain_detected": {
+        "name": "Rain"
+      },
+      "rain_detected_channel": {
+        "name": "{channel} · Rain"
+      }
+    },
+    "event": {
+      "events": {
+        "name": "Events"
+      },
+      "events_channel": {
+        "name": "{channel} · Events"
+      }
+    },
+    "number": {
+      "dimmer_level": {
+        "name": "Brightness"
+      },
+      "dimmer_level_channel": {
+        "name": "{channel} · Brightness"
+      },
+      "output_level": {
+        "name": "Output level"
+      },
+      "output_level_channel": {
+        "name": "{channel} · Output level"
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+schema: 1
+key: metering-outlet
+name: Messsteckdose
+origin: default
+version: 2026-11-16T10:00:00Z-02
+match:
+- type: CUL_HM
+  models:
+  - HM-ES-PMSW1-PL
+  role: metadata
+  channels:
+    '01': outlet
+    '02': meter
+    '03': threshold
+    '04': threshold
+    '05': threshold
+    '06': threshold
+default_role: outlet
+roles:
+  outlet:
+    name: Schalten
+    layout: outlet
+    electrical_readings: true
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+  meter:
+    name: Elektrische Messwerte
+    layout: meter
+    readings:
+      power:
+        mode: sensor
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+      energy:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: Wh
+      energyCalc:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: Wh
+      voltage:
+        mode: sensor
+        sensor_metadata:
+          device_class: voltage
+          state_class: measurement
+          unit_of_measurement: V
+      current:
+        mode: sensor
+        sensor_metadata:
+          device_class: current
+          state_class: measurement
+          unit_of_measurement: mA
+      frequency:
+        mode: sensor
+        sensor_metadata:
+          device_class: frequency
+          state_class: measurement
+          unit_of_measurement: Hz
+      gasPower: sensor
+      gasCnt:
+        mode: sensor
+        sensor_metadata:
+          device_class: gas
+          state_class: total_increasing
+          unit_of_measurement: m³
+      gasCntCalc:
+        mode: sensor
+        sensor_metadata:
+          device_class: gas
+          state_class: total
+          unit_of_measurement: m³
+      powerIEC: sensor
+      energyIEC: sensor
+      energyCalc_IEC: sensor
+      eState: sensor
+      state: internal
+  threshold:
+    name: Schwellenwerte
+    layout: threshold
+    readings:
+      state: sensor
+      trigger: sensor
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []

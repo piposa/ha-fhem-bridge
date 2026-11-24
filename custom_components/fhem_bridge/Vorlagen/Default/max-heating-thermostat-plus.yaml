@@ -1,0 +1,31 @@
+schema: 1
+key: max-heating-thermostat-plus
+name: MAX Heizkörperthermostat Plus
+origin: default
+version: 2026-11-16T16:45:00Z-01
+match:
+- type: MAX
+  models:
+  - HeatingThermostatPlus
+default_role: thermostat
+roles:
+  thermostat:
+    name: MAX Heizkörperthermostat Plus
+    layout: thermostat
+    remaining_readings: diagnostic
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          unit_of_measurement: °C
+          state_class: measurement
+      desiredTemperature: internal
+      mode: diagnostic
+      valveposition:
+        mode: sensor
+        sensor_metadata:
+          unit_of_measurement: '%'
+          state_class: measurement
+      state: internal
+items: []

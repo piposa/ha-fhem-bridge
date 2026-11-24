@@ -1,0 +1,38 @@
+schema: 1
+key: display
+name: Display
+origin: default
+version: 2026-11-12T12:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-DIS-WM55
+  channels:
+    '00': metadata
+    '01': remote
+default_role: display
+roles:
+  display:
+    name: Display
+    layout: display
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+    controls:
+    - name: displayWM
+      label: Displayzeile einstellen
+      modes:
+      - select
+      - select
+      - text
+      - select
+      - select
+      kind: set
+items: []

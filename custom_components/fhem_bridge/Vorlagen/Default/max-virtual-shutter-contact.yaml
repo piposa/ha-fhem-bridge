@@ -1,0 +1,22 @@
+schema: 1
+key: max-virtual-shutter-contact
+name: MAX Virtueller Fensterkontakt
+origin: default
+version: 2026-11-16T16:45:00Z-01
+match:
+- type: MAX
+  models:
+  - virtualShutterContact
+default_role: contact
+roles:
+  contact:
+    name: MAX Virtueller Fensterkontakt
+    layout: contact
+    remaining_readings: diagnostic
+    readings:
+      state: diagnostic
+      onoff: diagnostic
+    binary:
+    - onoff
+    - state
+items: []

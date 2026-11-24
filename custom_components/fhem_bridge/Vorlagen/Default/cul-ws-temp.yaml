@@ -1,0 +1,23 @@
+schema: 1
+key: cul-ws-temp
+name: CUL_WS Temperatursender
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - Temp
+default_role: temperature
+roles:
+  temperature:
+    name: CUL_WS Temperatursender
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      state: diagnostic
+items: []

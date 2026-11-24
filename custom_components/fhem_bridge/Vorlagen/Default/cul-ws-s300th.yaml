@@ -1,0 +1,30 @@
+schema: 1
+key: cul-ws-s300th
+name: CUL_WS S300TH
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - S300TH
+  - S300
+default_role: temperature
+roles:
+  temperature:
+    name: CUL_WS S300TH
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: diagnostic
+items: []

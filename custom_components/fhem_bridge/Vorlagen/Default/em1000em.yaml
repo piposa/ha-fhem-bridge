@@ -1,0 +1,49 @@
+schema: 1
+key: em1000em
+name: EM1000 EM
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: EMEM
+default_role: meter
+roles:
+  meter:
+    name: EM1000 EM
+    layout: meter
+    remaining_readings: diagnostic
+    readings:
+      energy_kWh:
+        mode: sensor
+        label: Zählerstand
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+          state_class: total_increasing
+      power_kW:
+        mode: sensor
+        label: Leistung
+        sensor_metadata:
+          device_class: power
+          unit_of_measurement: kW
+          state_class: measurement
+      power_kW_max:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          unit_of_measurement: kW
+      energy_kWh_h:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      energy_kWh_d:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      energy_kWh_w:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+items: []

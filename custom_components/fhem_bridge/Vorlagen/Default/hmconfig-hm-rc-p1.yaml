@@ -1,0 +1,18 @@
+schema: 1
+key: hmconfig-hm-rc-p1
+name: HM-RC-P1
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 001A.
+default_role: remote
+roles:
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-RC-P1

@@ -1,0 +1,77 @@
+get_attributes:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          filter:
+            - integration: fhem_bridge
+    source:
+      selector:
+        text:
+set_attribute:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          filter:
+            - integration: fhem_bridge
+    source:
+      selector:
+        text:
+    attribute:
+      required: true
+      selector:
+        text:
+    value:
+      required: true
+      selector:
+        text:
+          multiline: true
+invoke:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          filter:
+            - integration: fhem_bridge
+    source:
+      selector:
+        text:
+    action:
+      required: true
+      selector:
+        text:
+    args:
+      selector:
+        object:
+
+execute:
+  fields:
+    device_id:
+      required: true
+      selector:
+        device:
+          integration: fhem_bridge
+    source:
+      selector:
+        text:
+    kind:
+      required: true
+      selector:
+        select:
+          options:
+            - set
+            - get
+    command:
+      required: true
+      selector:
+        text:
+    arguments:
+      selector:
+        object:
+    inputs:
+      selector:
+        object:

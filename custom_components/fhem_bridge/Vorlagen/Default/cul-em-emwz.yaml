@@ -1,0 +1,36 @@
+schema: 1
+key: cul-em-emwz
+name: CUL_EM EMWZ
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: CUL_EM
+  models:
+  - EMWZ
+default_role: meter
+roles:
+  meter:
+    name: CUL_EM EMWZ
+    layout: meter
+    remaining_readings: diagnostic
+    readings:
+      total:
+        mode: sensor
+        label: Zählerstand
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+          state_class: total
+      current:
+        mode: sensor
+        label: Leistung
+        sensor_metadata:
+          device_class: power
+          unit_of_measurement: kW
+          state_class: measurement
+      peak:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          unit_of_measurement: kW
+items: []

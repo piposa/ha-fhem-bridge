@@ -1,0 +1,30 @@
+schema: 1
+key: cul-ws-wind
+name: CUL_WS Windsensor
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - Wind
+default_role: weather
+roles:
+  weather:
+    name: CUL_WS Windsensor
+    layout: weather
+    readings:
+      wind:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_speed
+          state_class: measurement
+          unit_of_measurement: km/h
+      wind_direction:
+        mode: sensor
+        sensor_metadata:
+          device_class: wind_direction
+          state_class: measurement_angle
+          unit_of_measurement: °
+      wind_swing: diagnostic
+      state: diagnostic
+items: []

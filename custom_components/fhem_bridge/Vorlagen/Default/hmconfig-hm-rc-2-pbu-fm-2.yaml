@@ -1,0 +1,29 @@
+schema: 1
+key: hmconfig-hm-rc-2-pbu-fm-2
+name: HM-RC-2-PBU-FM-2
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 010C.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-RC-2-PBU-FM-2
+  channels:
+    '00': metadata
+    '01': remote
+    '02': remote

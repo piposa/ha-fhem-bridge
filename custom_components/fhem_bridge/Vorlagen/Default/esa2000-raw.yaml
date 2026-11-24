@@ -1,0 +1,17 @@
+schema: 1
+key: esa2000-raw
+name: ESA2000 Zähler ohne belegte Einheit
+origin: default
+version: 2026-11-16T16:14:00Z-01
+match:
+- type: ESA2000
+default_role: meter
+roles:
+  meter:
+    name: ESA2000 Zähler ohne belegte Einheit
+    layout: meter
+    remaining_readings: diagnostic
+    readings:
+      total: sensor
+      actual: sensor
+items: []

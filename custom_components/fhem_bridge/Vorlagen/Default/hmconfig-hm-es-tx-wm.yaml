@@ -1,0 +1,85 @@
+schema: 1
+key: hmconfig-hm-es-tx-wm
+name: HM-ES-TX-WM
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 00DE.
+automatic: false
+default_role: meter
+roles:
+  meter:
+    name: Elektrische Messwerte
+    layout: meter
+    readings:
+      power:
+        mode: sensor
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+      energy:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: Wh
+      energyCalc:
+        mode: sensor
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: Wh
+      voltage:
+        mode: sensor
+        sensor_metadata:
+          device_class: voltage
+          state_class: measurement
+          unit_of_measurement: V
+      current:
+        mode: sensor
+        sensor_metadata:
+          device_class: current
+          state_class: measurement
+          unit_of_measurement: mA
+      frequency:
+        mode: sensor
+        sensor_metadata:
+          device_class: frequency
+          state_class: measurement
+          unit_of_measurement: Hz
+      gasPower:
+        mode: sensor
+        label: Gasdurchfluss
+        sensor_metadata:
+          device_class: volume_flow_rate
+          state_class: measurement
+          unit_of_measurement: m³/h
+      gasCnt:
+        mode: sensor
+        sensor_metadata:
+          device_class: gas
+          state_class: total_increasing
+          unit_of_measurement: m³
+      gasCntCalc:
+        mode: sensor
+        sensor_metadata:
+          device_class: gas
+          state_class: total
+          unit_of_measurement: m³
+      powerIEC: sensor
+      energyIEC: sensor
+      energyCalc_IEC: sensor
+      eState: sensor
+      state: internal
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-ES-TX-WM
+  channels:
+    '00': metadata

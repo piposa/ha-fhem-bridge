@@ -1,0 +1,20 @@
+schema: 1
+key: max-temperature-helper
+name: MAX Temperaturauswertung
+origin: default
+version: 2026-11-16T16:45:00Z-01
+match:
+- type: MAX_Temperature
+default_role: metadata
+roles:
+  metadata:
+    name: MAX Temperaturauswertung
+    layout: metadata
+    remaining_readings: diagnostic
+    readings:
+      state: diagnostic
+      Selected_Device: diagnostic
+      Selected_MaxDevice: diagnostic
+      Selected_Temperatur: diagnostic
+      Selected_Mode: diagnostic
+items: []

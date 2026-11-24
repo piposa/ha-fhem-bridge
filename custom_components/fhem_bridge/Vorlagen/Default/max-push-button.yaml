@@ -1,0 +1,19 @@
+schema: 1
+key: max-push-button
+name: MAX Taster
+origin: default
+version: 2026-11-16T16:45:00Z-01
+match:
+- type: MAX
+  models:
+  - PushButton
+default_role: remote
+roles:
+  remote:
+    name: MAX Taster
+    layout: remote
+    remaining_readings: diagnostic
+    readings:
+      state: diagnostic
+      onoff: diagnostic
+items: []

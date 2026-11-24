@@ -1,0 +1,39 @@
+schema: 1
+key: hmconfig-hm-rc-12-sw
+name: HM-RC-12-SW
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 004C.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-RC-12-SW
+  channels:
+    '00': metadata
+    '01': remote
+    '02': remote
+    '03': remote
+    '04': remote
+    '05': remote
+    '06': remote
+    '07': remote
+    08: remote
+    09: remote
+    '10': remote
+    '11': remote
+    '12': remote

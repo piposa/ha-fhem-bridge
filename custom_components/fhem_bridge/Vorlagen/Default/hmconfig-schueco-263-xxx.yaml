@@ -1,0 +1,15 @@
+schema: 1
+key: hmconfig-schueco-263-xxx
+name: SCHUECO_263-XXX
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 009B.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+items: []
+match:
+- type: CUL_HM
+  models:
+  - SCHUECO_263-XXX

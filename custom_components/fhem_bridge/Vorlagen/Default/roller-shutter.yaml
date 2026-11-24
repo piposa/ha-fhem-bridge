@@ -1,0 +1,15 @@
+schema: 1
+key: roller-shutter
+name: Rollladen
+origin: default
+version: 2026-11-12T12:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20rsu
+default_role: cover
+roles:
+  cover:
+    name: Rollladen
+    layout: cover
+items: []

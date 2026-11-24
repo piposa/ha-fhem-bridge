@@ -1,0 +1,41 @@
+schema: 1
+key: fs20st
+name: FS20 ST · Schaltsteckdose
+origin: default
+version: 2026-11-16T15:00:00Z-02
+match:
+- type: FS20
+  models:
+  - fs20st
+default_role: outlet
+roles:
+  outlet:
+    name: Schalten
+    layout: outlet
+    electrical_readings: true
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+items: []

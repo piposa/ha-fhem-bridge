@@ -1,0 +1,18 @@
+schema: 1
+key: cul-ws-brightness
+name: CUL_WS Helligkeitssensor
+origin: default
+version: 2026-11-16T16:00:00Z-01
+match:
+- type: CUL_WS
+  models:
+  - Brightness
+default_role: illuminance
+roles:
+  illuminance:
+    name: CUL_WS Helligkeitssensor
+    layout: illuminance
+    readings:
+      brightness: sensor
+      state: diagnostic
+items: []

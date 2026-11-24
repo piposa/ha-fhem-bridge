@@ -1,0 +1,42 @@
+schema: 1
+key: hmconfig-hm-lc-sw4-wm-2
+name: HM-LC-SW4-WM-2
+origin: default
+version: 2026-11-16T16:00:00Z-02
+description: CUL_HM nach HMConfig.pm, Modell-ID 00CF.
+default_role: default
+roles:
+  default:
+    name: FHEM-Readings und Befehle
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+  switch:
+    name: Schalten
+    layout: switch
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+    - name: on-till
+      label: Einschalten bis
+      modes:
+      - text
+      kind: set
+      device_type: CUL_HM
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-SW4-WM-2
+  channels:
+    '00': metadata
+    '01': switch
+    '02': switch
+    '03': switch
+    '04': switch

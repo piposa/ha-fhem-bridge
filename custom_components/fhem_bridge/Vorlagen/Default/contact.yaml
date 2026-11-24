@@ -1,0 +1,25 @@
+schema: 1
+key: contact
+name: Tür-/Fensterkontakt
+origin: default
+version: 2026-11-16T16:36:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-SEC-RHS
+  - HM-SEC-SCO
+- type: FS20
+  models:
+  - fs20tfk
+default_role: contact
+roles:
+  contact:
+    name: Tür-/Fensterkontakt
+    layout: contact
+    readings:
+      contact: diagnostic
+      sabotageError: diagnostic
+    binary:
+    - state
+    - contact
+items: []

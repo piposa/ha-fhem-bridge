@@ -1,0 +1,230 @@
+schema: 1
+key: gas-calculator
+name: Gaszähler (Calculator)
+origin: default
+version: 2026-11-16T13:18:52Z-01
+match:
+- type: GasCalculator
+default_role: meter
+roles:
+  meter:
+    name: Gaszähler
+    layout: meter
+    remaining_readings: diagnostic
+    reading_suffixes:
+      _Meter:
+        mode: sensor
+        label: Zählerstand
+        sensor_metadata:
+          device_class: gas
+          state_class: total
+          unit_of_measurement: m³
+        unit_from: Volume
+      _PowerCurrent:
+        mode: sensor
+        label: Leistung
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayAver:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayMin:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayMax:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: power
+          state_class: measurement
+          unit_of_measurement: W
+        unit_from: SiPrefixPower
+      _PowerDayCount:
+        mode: diagnostic
+        sensor_metadata:
+          state_class: measurement
+      _PowerDaySum:
+        mode: diagnostic
+        sensor_metadata: {}
+      _EnergyDay:
+        mode: sensor
+        label: Energie heute
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      _EnergyCostDay:
+        mode: sensor
+        label: Kosten heute
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostDayLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _Vol1stDay:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _VolLastDay:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _EnergyMonth:
+        mode: sensor
+        label: Energie diesen Monat
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      _EnergyCostMonth:
+        mode: sensor
+        label: Kosten diesen Monat
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostMonthLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _Vol1stMonth:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _VolLastMonth:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _EnergyYear:
+        mode: sensor
+        label: Energie dieses Jahr
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      _EnergyCostYear:
+        mode: sensor
+        label: Kosten dieses Jahr
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostYearLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _Vol1stYear:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _VolLastYear:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _EnergyMeter:
+        mode: sensor
+        label: Energie Abrechnungszeitraum
+        sensor_metadata:
+          device_class: energy
+          state_class: total_increasing
+          unit_of_measurement: kWh
+      _EnergyCostMeter:
+        mode: diagnostic
+        label: Kosten Abrechnungszeitraum
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _EnergyMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: energy
+          unit_of_measurement: kWh
+      _EnergyCostMeterLast:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _Vol1stMeter:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _VolLastMeter:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _FinanceReserve:
+        mode: diagnostic
+        label: Vorauszahlungsreserve
+        sensor_metadata:
+          device_class: monetary
+          unit_of_measurement: EUR
+        unit_from: Currency
+      _MonthMeterReading:
+        mode: diagnostic
+        sensor_metadata:
+          state_class: measurement
+      _LastDV:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: gas
+          unit_of_measurement: m³
+        unit_from: Volume
+      _LastDt:
+        mode: diagnostic
+        sensor_metadata:
+          device_class: duration
+          state_class: measurement
+          unit_of_measurement: s
+items: []

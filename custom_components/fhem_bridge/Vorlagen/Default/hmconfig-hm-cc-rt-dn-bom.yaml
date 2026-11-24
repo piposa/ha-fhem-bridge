@@ -1,0 +1,110 @@
+schema: 1
+key: hmconfig-hm-cc-rt-dn-bom
+name: HM-CC-RT-DN-BOM
+origin: default
+version: 2026-11-16T16:00:00Z-01
+description: CUL_HM nach HMConfig.pm, Modell-ID 00BD.
+automatic: false
+default_role: thermostat
+roles:
+  thermostat:
+    name: Heizungssteuerung
+    layout: thermostat
+    readings:
+      state: internal
+      measured-temp:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      desired-temp:
+        mode: internal
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      battery: diagnostic
+      actuator:
+        mode: sensor
+        sensor_metadata:
+          state_class: measurement
+          unit_of_measurement: '%'
+      ValvePosition:
+        mode: sensor
+        sensor_metadata:
+          state_class: measurement
+          unit_of_measurement: '%'
+      mode: internal
+      controlMode: internal
+    controls:
+    - name: mode
+      label: Betriebsart
+      modes:
+      - select
+      reading: mode
+      kind: set
+      device_type: FHT
+    - name: controlMode
+      label: Betriebsart
+      modes:
+      - select
+      reading: controlMode
+      kind: set
+      device_type: CUL_HM
+  temperature:
+    name: Temperatur und Luftfeuchte
+    layout: temperature
+    readings:
+      temperature:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      measured-temp:
+        mode: sensor
+        sensor_metadata:
+          device_class: temperature
+          state_class: measurement
+          unit_of_measurement: °C
+      humidity:
+        mode: sensor
+        sensor_metadata:
+          device_class: humidity
+          state_class: measurement
+          unit_of_measurement: '%'
+      state: internal
+  remote:
+    name: Tasten
+    layout: remote
+    readings:
+      state: internal
+  threshold:
+    name: Schwellenwerte
+    layout: threshold
+    readings:
+      state: sensor
+      trigger: sensor
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []
+match:
+- type: CUL_HM
+  models:
+  - HM-CC-RT-DN-BOM
+  role: metadata
+  channels:
+    '01': temperature
+    '06': remote
+    '07': threshold
+  thermostat_role: thermostat

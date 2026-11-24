@@ -1,0 +1,46 @@
+schema: 1
+key: dimmer
+name: Lichtdimmer
+origin: default
+version: 2026-11-16T15:00:00Z-01
+match:
+- type: CUL_HM
+  models:
+  - HM-LC-DIM1PWM-CV
+  - HM-LC-DIM1PWM-CV-2
+  - HM-LC-DIM1PWM-CV2
+  role: metadata
+  channels:
+    '00': dimmer
+    '01': dimmer
+- type: FS20
+  models:
+  - fs20di
+  - fs20di10
+  - fs20du
+default_role: dimmer
+roles:
+  dimmer:
+    name: Lichtdimmer
+    layout: dimmer
+    readings:
+      state: internal
+    controls:
+    - name: on-for-timer
+      label: Einschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+    - name: off-for-timer
+      label: Ausschalttimer
+      modes:
+      - text
+      kind: set
+      device_type: FS20
+  metadata:
+    name: Gerätedaten
+    layout: metadata
+    readings:
+      state: internal
+items: []

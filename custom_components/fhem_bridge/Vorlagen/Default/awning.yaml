@@ -1,0 +1,16 @@
+schema: 1
+key: awning
+name: Markise
+origin: default
+version: 2026-11-12T12:00:00Z-01
+match:
+- type: FS20
+  models:
+  - fs20ms
+  - fs20ms2
+default_role: awning
+roles:
+  awning:
+    name: Markise
+    layout: awning
+items: []

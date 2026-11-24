@@ -1,0 +1,26 @@
+schema: 1
+key: dlpio8-digital
+name: DLPIO8 Digitaler Eingang
+origin: default
+version: 2026-11-24T11:00:00Z-01
+description: DLPIO8IO-value als binärer Zustand. Keine Befehle ohne vom Gerät gelieferte
+  Set-/Get-Metadaten.
+match:
+- type: DLPIO8IO
+  models:
+  - DLPIO8IO
+  readings:
+  - value
+- type: DLPIO8IO
+  readings:
+  - value
+default_role: digital
+roles:
+  digital:
+    name: Digitaler Eingang
+    layout: display
+    binary:
+    - value
+    readings:
+      state: diagnostic
+items: []
